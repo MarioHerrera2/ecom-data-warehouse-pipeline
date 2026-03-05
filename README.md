@@ -10,7 +10,7 @@ The project generates synthetic sales data, loads it through an ETL pipeline, bu
 
 This project implements a **star schema data warehouse** with staging, transformation, and reporting layers.
 
-![Warehouse Schema](EcomDW_Project/Images/warehouse_schema.png)
+![Warehouse Schema](EcomDW_Project/Images/Database_Schema.png)
 
 ---
 
