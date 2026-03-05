@@ -1,1 +1,124 @@
-EcomDW_Project/Images/Data_Flow.png
+# E-Commerce Data Warehouse & ETL Pipeline
+
+End-to-end data engineering project that simulates an e-commerce analytics pipeline using **Python, SQL Server, SSIS, and SSRS**.
+
+The project generates synthetic sales data, loads it through an ETL pipeline, builds a dimensional data warehouse, and produces analytical reports.
+
+---
+
+# Architecture Overview
+
+This project implements a **star schema data warehouse** with staging, transformation, and reporting layers.
+
+![Warehouse Schema](EcomDW_Project/Images/warehouse_schema.png)
+
+---
+
+# Technology Stack
+
+**Python**
+Synthetic sales data generation
+
+**SQL Server**
+Data warehouse
+Dimensional modeling
+Stored procedures and validation
+
+**SSIS (SQL Server Integration Services)**
+ETL orchestration
+Data transformation
+Surrogate key resolution
+
+**SSRS (SQL Server Reporting Services)**
+Analytical reporting
+Interactive dashboards
+
+---
+
+# Data Pipeline
+
+The pipeline simulates a typical enterprise data engineering workflow.
+
+1. Python generates synthetic sales data.
+2. Data is exported to CSV files.
+3. SSIS ingests CSV files into staging tables.
+4. Staging views perform deduplication and validation.
+5. Dimension tables are upserted using surrogate keys.
+6. Fact table loads transactional metrics.
+7. SSRS reports provide analytical insights.
+
+---
+
+# SSIS ETL Pipeline
+
+The SSIS control flow orchestrates ingestion and warehouse loading.
+
+![SSIS Control Flow](EcomDW_Project/Images/ssis_control_flow.png)
+
+---
+
+# Data Transformation
+
+SSIS data flows perform transformations including:
+
+type conversions
+lookup transformations
+derived columns
+surrogate key resolution
+
+![SSIS Data Flow](EcomDW_Project/Images/ssis_data_flow.png)
+
+---
+
+# Dimensional Data Warehouse
+
+The warehouse follows a **star schema design**.
+
+### Fact Table
+
+**FactSales**
+Units
+Revenue
+DateKey
+ProductKey
+StoreKey
+
+### Dimension Tables
+
+**DimDate**
+Date attributes for time analysis
+
+**DimProduct**
+Product hierarchy and attributes
+
+**DimStore**
+Store location and region attributes
+
+---
+
+# Reporting Layer
+
+SSRS provides analytical reporting with filtering and drill-through capability.
+
+## Sales Summary Report
+
+![Sales Summary](EcomDW_Project/Images/ssrs_sales_summary.png)
+
+## Drillthrough Detail Report
+
+![Drillthrough](EcomDW_Project/Images/ssrs_drillthrough.png)
+
+---
+
+# Data Validation
+
+Validation scripts ensure pipeline integrity by checking:
+
+row counts across pipeline stages
+null dimension keys
+outlier unit prices
+referential integrity
+
+---
+
+# Repository Structure
