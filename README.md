@@ -73,7 +73,7 @@ The warehouse follows a **star schema design**.
 
 ### Fact Table
 
-**FactSales**
+**FactSales :**
 Units,
 Revenue,
 DateKey,
@@ -84,10 +84,10 @@ ProductKey and StoreKey
 **DimDate :**
 Date attributes for time analysis
 
-**DimProduct**
+**DimProduct :**
 Product hierarchy and attributes
 
-**DimStore**
+**DimStore :**
 Store location and region attributes
 
 ---
