@@ -1,0 +1,323 @@
+import csv
+import os
+import random
+from datetime import date, timedelta
+
+# ============================================================
+# CONFIG (change only if your folder is different)
+# ============================================================
+INBOUND_DIR = r"C:\EcomDW\inbound"
+MONTHS_TO_GENERATE = 6
+
+# Start month for the 6 files (YYYY, MM)
+START_YEAR = 2024
+START_MONTH = 4
+
+# Keep data stable/repeatable if you rerun
+RANDOM_SEED = 42
+
+# ANSI / Windows-1252 encoding for SSIS (aka "cp1252")
+CSV_ENCODING = "cp1252"
+
+# ============================================================
+# DATA MODEL (your project)
+# Regions required: Midwest, Mountain, NorthEast, South, West
+# 3-4 states per region, no City column in report BUT your pipeline has City
+# ============================================================
+REGIONS_TO_STATES = {
+    "Midwest":   ["IL", "OH", "MI", "WI"],
+    "Mountain":  ["CO", "UT", "AZ", "NM"],
+    "NorthEast": ["NY", "NJ", "PA", "MA"],
+    "South":     ["FL", "GA", "TX", "NC"],
+    "West":      ["CA", "WA", "OR", "NV"],
+}
+
+# Simple safe city list (ASCII / cp1252-friendly)
+CITY_BY_STATE = {
+    "IL": ["Chicago", "Naperville"],
+    "OH": ["Columbus", "Cleveland"],
+    "MI": ["Detroit", "Ann Arbor"],
+    "WI": ["Milwaukee", "Madison"],
+    "CO": ["Denver", "Colorado Springs"],
+    "UT": ["Salt Lake City", "Provo"],
+    "AZ": ["Phoenix", "Tucson"],
+    "NM": ["Albuquerque", "Santa Fe"],
+    "NY": ["New York", "Buffalo"],
+    "NJ": ["Newark", "Jersey City"],
+    "PA": ["Philadelphia", "Pittsburgh"],
+    "MA": ["Boston", "Worcester"],
+    "FL": ["Miami", "Orlando"],
+    "GA": ["Atlanta", "Savannah"],
+    "TX": ["Dallas", "Houston"],
+    "NC": ["Charlotte", "Raleigh"],
+    "CA": ["Los Angeles", "San Diego"],
+    "WA": ["Seattle", "Spokane"],
+    "OR": ["Portland", "Salem"],
+    "NV": ["Las Vegas", "Reno"],
+}
+
+# Categories + 3-4 brands each (more realistic for cascading Brand filters)
+CATEGORY_BRANDS = {
+    "Electronics": ["NovaTech", "SoundForge", "SkyWave", "PulseGear"],
+    "Apparel":     ["RavenWear", "UrbanThread", "NightShift", "CoreKnit"],
+    "Home":        ["HearthCo", "CleanNest", "HomeSphere", "BrightLiving"],
+    "Sports":      ["PeakMotion", "ArenaPro", "SwiftStride", "IronField"],
+}
+
+# Increase products per category (double+)
+PRODUCTS_BY_CATEGORY = {
+    "Electronics": [
+        "Bluetooth Speaker", "Wireless Charger", "Smartwatch",
+        "Noise Cancel Headphones", "Portable SSD", "4K Streaming Stick",
+        "Gaming Mouse", "Mechanical Keyboard"
+    ],
+    "Apparel": [
+        "Cap", "T-Shirt", "Hoodie", "Sneakers",
+        "Joggers", "Jacket", "Crew Socks", "Beanie"
+    ],
+    "Home": [
+        "Coffee Maker", "Vacuum", "Phone Case",
+        "Air Fryer", "Blender", "Water Filter Pitcher",
+        "Desk Lamp", "Storage Bins"
+    ],
+    "Sports": [
+        "Soccer Ball", "Tennis Racket", "Yoga Mat",
+        "Dumbbell Set", "Resistance Bands", "Basketball",
+        "Running Shoes", "Gym Bag"
+    ],
+}
+
+# Category-based unit ranges (heavy hitters, but still believable)
+UNITS_RANGE_BY_CATEGORY = {
+    "Electronics": (1, 8),
+    "Apparel":     (1, 10),
+    "Home":        (1, 6),
+    "Sports":      (1, 9),
+}
+
+# Category-based price ranges (consistent pricing per product)
+PRICE_RANGE_BY_CATEGORY = {
+    "Electronics": (35.00, 250.00),
+    "Apparel":     (12.00, 120.00),
+    "Home":        (18.00, 220.00),
+    "Sports":      (15.00, 180.00),
+}
+
+# ============================================================
+# HELPERS
+# ============================================================
+def ensure_dirs():
+    os.makedirs(INBOUND_DIR, exist_ok=True)
+
+def month_start_end(year, month):
+    start = date(year, month, 1)
+    if month == 12:
+        end = date(year + 1, 1, 1) - timedelta(days=1)
+    else:
+        end = date(year, month + 1, 1) - timedelta(days=1)
+    return start, end
+
+def iter_months(start_year, start_month, count):
+    y, m = start_year, start_month
+    for _ in range(count):
+        yield y, m
+        m += 1
+        if m == 13:
+            m = 1
+            y += 1
+
+def random_date_in_month(year, month):
+    start, end = month_start_end(year, month)
+    delta_days = (end - start).days
+    return start + timedelta(days=random.randint(0, delta_days))
+
+def safe_write_csv(path, fieldnames, rows):
+    # newline="" avoids blank lines on Windows
+    with open(path, "w", newline="", encoding=CSV_ENCODING) as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        for r in rows:
+            writer.writerow(r)
+
+def pick_price(category):
+    lo, hi = PRICE_RANGE_BY_CATEGORY[category]
+    return round(random.uniform(lo, hi), 2)
+
+# ============================================================
+# GENERATE STORES (2-3x more stores)
+# ============================================================
+def build_stores():
+    stores = []
+    store_count = 18  # adjust up/down; this is ~2-3x a tiny starter set
+    store_names = [
+        "Sunset Mall", "Pine Plaza", "Ridge Center", "Harbor Point",
+        "Canyon Outlet", "Maple Square", "Rivergate", "Stonebrook",
+        "Lakeside Market", "Grand Avenue", "Skyline Shops", "Copper Corner",
+        "Meadow Walk", "North Gate", "South Point", "Westfield Hub",
+        "Eastview Center", "Summit Square"
+    ]
+
+    # Build stores with Region->State->City
+    sid = 1
+    for name in store_names[:store_count]:
+        region = random.choice(list(REGIONS_TO_STATES.keys()))
+        state = random.choice(REGIONS_TO_STATES[region])
+        city = random.choice(CITY_BY_STATE[state])
+        stores.append({
+            "StoreId": f"S{sid:04d}",
+            "StoreName": name,
+            "City": city,
+            "State": state,
+            "Region": region
+        })
+        sid += 1
+    return stores
+
+# ============================================================
+# GENERATE PRODUCTS (more products per category + multiple brands)
+# Pricing is consistent per ProductId
+# ============================================================
+def build_products():
+    products = []
+    pid = 1
+
+    for category, names in PRODUCTS_BY_CATEGORY.items():
+        brands = CATEGORY_BRANDS[category]
+        for n in names:
+            brand = random.choice(brands)
+            product_id = f"P{pid:04d}"
+            # Assign a stable base price per product so it does NOT change day-to-day
+            base_price = pick_price(category)
+
+            products.append({
+                "ProductId": product_id,
+                "ProductName": n,
+                "Category": category,
+                "Brand": brand,
+                "BasePrice": base_price  # internal only; not written to products_master
+            })
+            pid += 1
+    return products
+
+# ============================================================
+# SALES FILES (match your stg.SalesRaw columns)
+# stg.SalesRaw has:
+# SaleDate, ProductId, ProductName, Category, Brand, StoreId, StoreName,
+# City, State, Units, Revenue, SourceFile, LoadDttm (latter two filled in SSIS)
+# We'll output ONLY the CSV columns that the flat file expects.
+# ============================================================
+def build_sales_rows(products, stores, year, month):
+    rows = []
+
+    # Heavier volume: tune these for your laptop speed
+    # Each month roughly: stores * products * avg 1-3 rows
+    rows_per_store = 120  # adjust up/down
+
+    # Quick lookup dicts
+    prod_by_id = {p["ProductId"]: p for p in products}
+
+    for s in stores:
+        for _ in range(rows_per_store):
+            p = random.choice(products)
+            category = p["Category"]
+            units_lo, units_hi = UNITS_RANGE_BY_CATEGORY[category]
+            units = random.randint(units_lo, units_hi)
+
+            # consistent pricing per product + small promo variance (optional)
+            # promo variance kept small so price doesn't jump wildly
+            base_price = p["BasePrice"]
+            promo_factor = random.choice([1.00, 1.00, 1.00, 0.95, 1.05])  # mostly stable
+            unit_price = round(base_price * promo_factor, 2)
+
+            revenue = round(units * unit_price, 2)
+
+            sale_dt = random_date_in_month(year, month)
+
+            rows.append({
+                "SaleDate": sale_dt.strftime("%Y-%m-%d"),
+                "ProductId": p["ProductId"],
+                "ProductName": p["ProductName"],
+                "Category": p["Category"],
+                "Brand": p["Brand"],
+                "StoreId": s["StoreId"],
+                "StoreName": s["StoreName"],
+                "City": s["City"],
+                "State": s["State"],
+                "Units": str(units),
+                # Important: plain numeric with dot decimal, no commas, no currency symbol
+                "Revenue": f"{revenue:.2f}"
+            })
+
+    return rows
+
+# ============================================================
+# MAIN
+# ============================================================
+def main():
+    random.seed(RANDOM_SEED)
+    ensure_dirs()
+
+    # Build master data
+    stores = build_stores()
+    products = build_products()
+
+    # Write stores_master.csv (includes Region)
+    stores_path = os.path.join(INBOUND_DIR, "stores_master.csv")
+    safe_write_csv(
+        stores_path,
+        fieldnames=["StoreId", "StoreName", "City", "State", "Region"],
+        rows=[{k: s[k] for k in ["StoreId", "StoreName", "City", "State", "Region"]} for s in stores]
+    )
+
+    # Write products_master.csv
+    products_path = os.path.join(INBOUND_DIR, "products_master.csv")
+    safe_write_csv(
+        products_path,
+        fieldnames=["ProductId", "ProductName", "Category", "Brand"],
+        rows=[{k: p[k] for k in ["ProductId", "ProductName", "Category", "Brand"]} for p in products]
+    )
+
+    # Write 6 months of sales_YYYY-MM.csv
+    for y, m in iter_months(START_YEAR, START_MONTH, MONTHS_TO_GENERATE):
+        sales_rows = build_sales_rows(products, stores, y, m)
+        sales_filename = f"sales_{y:04d}-{m:02d}.csv"
+        sales_path = os.path.join(INBOUND_DIR, sales_filename)
+
+        safe_write_csv(
+            sales_path,
+            fieldnames=[
+                "SaleDate", "ProductId", "ProductName", "Category", "Brand",
+                "StoreId", "StoreName", "City", "State", "Units", "Revenue"
+            ],
+            rows=sales_rows
+        )
+
+    # Optional: a tiny badrows file (kept minimal + cp1252-safe)
+    bad_path = os.path.join(INBOUND_DIR, "sales_test_badrows.csv")
+    bad_rows = [
+        # bad date format
+        {"SaleDate": "04/99/2024", "ProductId": "P0001", "ProductName": "Bluetooth Speaker", "Category": "Electronics",
+         "Brand": "NovaTech", "StoreId": "S0001", "StoreName": "Sunset Mall", "City": "Miami", "State": "FL",
+         "Units": "2", "Revenue": "199.99"},
+        # bad revenue text
+        {"SaleDate": "2024-04-05", "ProductId": "P0002", "ProductName": "Wireless Charger", "Category": "Electronics",
+         "Brand": "PulseGear", "StoreId": "S0002", "StoreName": "Pine Plaza", "City": "Orlando", "State": "FL",
+         "Units": "3", "Revenue": "12O.00"}  # letter O (not zero)
+    ]
+    safe_write_csv(
+        bad_path,
+        fieldnames=[
+            "SaleDate", "ProductId", "ProductName", "Category", "Brand",
+            "StoreId", "StoreName", "City", "State", "Units", "Revenue"
+        ],
+        rows=bad_rows
+    )
+
+    print("DONE ✅ Generated:")
+    print(" - products_master.csv")
+    print(" - stores_master.csv")
+    print(f" - {MONTHS_TO_GENERATE} monthly sales files (sales_YYYY-MM.csv)")
+    print(" - sales_test_badrows.csv (optional)")
+
+if __name__ == "__main__":
+    main()

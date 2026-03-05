@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36327.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "EcommDW_Reports", "EcommDW_Reports.rptproj", "{A582FF4A-5527-652B-F4DD-56CEDACF1751}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A582FF4A-5527-652B-F4DD-56CEDACF1751}.Debug|Default.ActiveCfg = Debug
+		{A582FF4A-5527-652B-F4DD-56CEDACF1751}.Debug|Default.Build.0 = Debug
+		{A582FF4A-5527-652B-F4DD-56CEDACF1751}.Debug|Default.Deploy.0 = Debug
+		{A582FF4A-5527-652B-F4DD-56CEDACF1751}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{A582FF4A-5527-652B-F4DD-56CEDACF1751}.DebugLocal|Default.Build.0 = DebugLocal
+		{A582FF4A-5527-652B-F4DD-56CEDACF1751}.Release|Default.ActiveCfg = Release
+		{A582FF4A-5527-652B-F4DD-56CEDACF1751}.Release|Default.Build.0 = Release
+		{A582FF4A-5527-652B-F4DD-56CEDACF1751}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F053F60F-E1CA-4DC5-8E18-4CFFB7AF62BD}
+	EndGlobalSection
+EndGlobal
