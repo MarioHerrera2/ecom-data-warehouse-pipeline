@@ -102,7 +102,7 @@ SSRS provides analytical reporting with filtering and drill-through capability.
 
 ## Sales Summary Report
 
-![Sales Summary](EcomDW_Project/Images/ssrs_sales_summary.png)
+![Sales Summary](EcomDW_Project/Images/SSRS_Main_Report.png)
 
 ## Drillthrough Detail Report
 
