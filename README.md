@@ -19,15 +19,14 @@ This project implements a **star schema data warehouse** with staging, transform
 **Python**
 Synthetic sales data generation
 
-**SQL Server:**
+**SQL Server: **
 Data warehouse,
 Dimensional modeling,
 Stored procedures and validation
 
-**SSIS (SQL Server Integration Services)**
-ETL orchestration
-Data transformation
-Surrogate key resolution
+**SSIS: **
+ETL orchestration,
+Data transformation and Surrogate key resolution
 
 **SSRS (SQL Server Reporting Services)**
 Analytical reporting
