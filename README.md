@@ -1,1 +1,3 @@
-
+EcomDW_Project/Images/warehouse_schema.png
+EcomDW_Project/Images/ssis_control_flow.png
+EcomDW_Project/Images/ssis_data_flow.png
