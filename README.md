@@ -121,8 +121,6 @@ referential integrity
 
 ---
 
----
-
 # Future Improvements
 
 Potential enhancements include:
