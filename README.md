@@ -19,11 +19,9 @@ This project implements a **star schema data warehouse** with staging, transform
 **Python**
 Synthetic sales data generation
 
-**SQL Server**
-Data warehouse
-
-Dimensional modeling
-
+**SQL Server:**
+Data warehouse,
+Dimensional modeling,
 Stored procedures and validation
 
 **SSIS (SQL Server Integration Services)**
