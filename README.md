@@ -28,9 +28,8 @@ SSIS:
 ETL orchestration,
 Data transformation and Surrogate key resolution
 
-**SSRS (SQL Server Reporting Services)**
-Analytical reporting
-Interactive dashboards
+SSRS:
+Analytical reporting and Interactive dashboards
 
 ---
 
