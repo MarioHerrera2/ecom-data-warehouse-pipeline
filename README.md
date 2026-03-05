@@ -59,11 +59,11 @@ The SSIS control flow orchestrates ingestion and warehouse loading.
 
 SSIS data flows perform transformations including:
 
-- type conversions,
+- Type conversions,
 
 - lookup transformations,
 
-- derived columns and surrogate key resolution.
+- Derived columns and Surrogate key resolution.
 
 ![SSIS Data Flow](EcomDW_Project/Images/Data_Flow.png)
 
