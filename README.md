@@ -71,9 +71,9 @@ derived columns and surrogate key resolution.
 
 The warehouse follows a **star schema design**.
 
-### Fact Table
+###<ins> Fact Table
 
-**<ins>FactSales :</ ins>**
+**FactSales :**
 Units,
 Revenue,
 DateKey,
