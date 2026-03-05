@@ -24,7 +24,7 @@ Data warehouse,
 Dimensional modeling,
 Stored procedures and validation
 
-**SSIS: **
+SSIS: 
 ETL orchestration,
 Data transformation and Surrogate key resolution
 
