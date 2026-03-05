@@ -121,4 +121,19 @@ referential integrity
 
 ---
 
-# Repository Structure
+---
+
+# Future Improvements
+
+Potential enhancements include:
+
+incremental loading
+automated scheduling
+additional reporting metrics
+data quality monitoring
+
+---
+
+# Author
+
+Mario Herrera
