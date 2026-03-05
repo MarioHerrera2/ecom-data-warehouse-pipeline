@@ -53,7 +53,7 @@ The pipeline simulates a typical enterprise data engineering workflow.
 
 The SSIS control flow orchestrates ingestion and warehouse loading.
 
-![SSIS Control Flow](EcomDW_Project/Images/ssis_control_flow.png)
+![SSIS Control Flow](EcomDW_Project/Images/SSIS_Pipeline_control_Flow.png)
 
 ---
 
