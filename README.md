@@ -79,7 +79,7 @@ Revenue,
 DateKey,
 ProductKey and StoreKey
 
-### Dimension Tables
+### <ins>Dimension Tables
 
 **DimDate :**
 Date attributes for time analysis
