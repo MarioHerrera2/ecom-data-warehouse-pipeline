@@ -106,7 +106,7 @@ SSRS provides analytical reporting with filtering and drill-through capability.
 
 ## Drillthrough Detail Report
 
-![Drillthrough](EcomDW_Project/Images/ssrs_drillthrough.png)
+![Drillthrough](EcomDW_Project/Images/Drillthrough_Report.png)
 
 ---
 
