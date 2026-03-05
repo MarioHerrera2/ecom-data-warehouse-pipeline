@@ -21,7 +21,9 @@ Synthetic sales data generation
 
 **SQL Server**
 Data warehouse
+
 Dimensional modeling
+
 Stored procedures and validation
 
 **SSIS (SQL Server Integration Services)**
