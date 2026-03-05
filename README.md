@@ -73,7 +73,7 @@ The warehouse follows a **star schema design**.
 
 ### Fact Table
 
-**FactSales :**
+**<ins>FactSales :</ ins>**
 Units,
 Revenue,
 DateKey,
