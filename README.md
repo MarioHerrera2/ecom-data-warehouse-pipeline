@@ -114,13 +114,13 @@ SSRS provides analytical reporting with filtering and drill-through capability.
 
 **Validation scripts ensure pipeline integrity by checking:**
 
--row counts across pipeline stages
+- row counts across pipeline stages
 
--null dimension keys
+- null dimension keys
 
--outlier unit prices
+- outlier unit prices
 
--referential integrity
+- referential integrity
 
 ---
 
@@ -128,13 +128,13 @@ SSRS provides analytical reporting with filtering and drill-through capability.
 
 **Potential enhancements include:**
 
--incremental loading
+- incremental loading
 
--automated scheduling
+- automated scheduling
 
--additional reporting metrics
+- additional reporting metrics
 
--data quality monitoring
+- data quality monitoring
 
 ---
 
