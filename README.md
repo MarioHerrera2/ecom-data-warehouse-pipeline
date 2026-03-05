@@ -66,7 +66,7 @@ lookup transformations
 derived columns
 surrogate key resolution
 
-![SSIS Data Flow](EcomDW_Project/Images/ssis_data_flow.png)
+![SSIS Data Flow](EcomDW_Project/Images/Data_Flow.png)
 
 ---
 
