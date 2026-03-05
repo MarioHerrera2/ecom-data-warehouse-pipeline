@@ -61,7 +61,7 @@ SSIS data flows perform transformations including:
 
 - Type conversions,
 
-- lookup transformations,
+- Lookup transformations,
 
 - Derived columns and Surrogate key resolution.
 
