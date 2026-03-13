@@ -6,7 +6,7 @@ The project generates synthetic sales data, loads it through an ETL pipeline, bu
 
 ---
 
-### :hammer_and_pick: Technology Stack
+# :hammer_and_pick: Technology Stack
 
 ![GitHub](https://img.shields.io/badge/GitHub-Version%20Control-white)
 ![Python](https://img.shields.io/badge/Python-Data%20Generation-green)
@@ -28,7 +28,7 @@ The project generates synthetic sales data, loads it through an ETL pipeline, bu
 
 ---
 
-## 🏗️ Architecture Overview
+# 🏗️ Architecture Overview
 
 This project implements a **star schema data warehouse** with staging, transformation, and reporting layers.
 
@@ -40,7 +40,7 @@ This project implements a **star schema data warehouse** with staging, transform
 
 ---
 
-## 🧭 SSIS ETL Pipeline
+# 🧭 SSIS ETL Pipeline
 
 The SSIS control flow orchestrates ingestion and warehouse loading.
 
@@ -66,7 +66,7 @@ SSIS data flows perform transformations including:
 
 ---
 
-## 🏭 Dimensional Data Warehouse
+# 🏭 Dimensional Data Warehouse
 
 The warehouse follows a **star schema design**.
 
@@ -105,7 +105,7 @@ SSRS provides analytical reporting with filtering and drill-through capability.
 
 ---
 
-## 📋 Data Validation
+# 📋 Data Validation
 
 **Validation scripts ensure pipeline integrity by checking:**
 
@@ -119,7 +119,7 @@ SSRS provides analytical reporting with filtering and drill-through capability.
 
 ---
 
-## 🧱 Future Improvements
+# 🧱 Future Improvements
 
 **Potential enhancements include:**
 
