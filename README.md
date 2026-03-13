@@ -24,6 +24,7 @@ The project generates synthetic sales data, loads it through an ETL pipeline, bu
 ![Data_Pipline](EcomDW_Project/Images/DataPipeline_.png)
 
 </div>
+
 ---
 
 # Architecture Overview
