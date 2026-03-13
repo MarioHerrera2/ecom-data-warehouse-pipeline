@@ -66,7 +66,7 @@ SSIS data flows perform transformations including:
 
 ---
 
-# 🏭 Dimensional Data Warehouse
+## 🏭 Dimensional Data Warehouse
 
 The warehouse follows a **star schema design**.
 
@@ -95,11 +95,11 @@ Store location and region attributes
 
 SSRS provides analytical reporting with filtering and drill-through capability.
 
-## Sales Summary Report
+## 📊 Sales Summary Report
 
 ![Sales Summary](EcomDW_Project/Images/SSRS_Main_Report.png)
 
-## Drillthrough Detail Report
+## 📊 Drillthrough Detail Report
 
 ![Drillthrough](EcomDW_Project/Images/Drillthrough_Report.png)
 
