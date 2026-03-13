@@ -51,7 +51,7 @@ The SSIS control flow orchestrates ingestion and warehouse loading.
 
 <div align="center">
 
-# Data Transformation
+# ⚙️ Data Transformation
 
 SSIS data flows perform transformations including:
 
