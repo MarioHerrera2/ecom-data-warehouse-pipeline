@@ -22,7 +22,7 @@ The project generates synthetic sales data, loads it through an ETL pipeline, bu
 <div align="center">
 
 
-![Data_Pipline](EcomDW_Project/Images/DataPipeline_.png)
+![Data_Pipline](EcomDW_Project/Images/Image_20260313_162408_816.png)
 
 </div>
 
