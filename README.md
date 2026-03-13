@@ -40,7 +40,7 @@ This project implements a **star schema data warehouse** with staging, transform
 
 ---
 
-# SSIS ETL Pipeline
+# 🧭 SSIS ETL Pipeline
 
 The SSIS control flow orchestrates ingestion and warehouse loading.
 
