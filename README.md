@@ -133,6 +133,6 @@ SSRS provides analytical reporting with filtering and drill-through capability.
 
 ---
 
-# Author
+# ✍️ Author
 
 Mario Herrera
