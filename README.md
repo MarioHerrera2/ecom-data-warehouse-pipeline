@@ -16,18 +16,16 @@ This project implements a **star schema data warehouse** with staging, transform
 
 :hammer_and_pick: # Technology Stack
 
-![Python](https://img.shields.io/badge/Python-Data%20Generation-teal) : Synthetic sales data generation
+![Python](https://img.shields.io/badge/Python-Data%20Generation-teal)
+Synthetic sales data generation
 
-SQL Server : 
-Data warehouse,
-Dimensional modeling,
-Stored procedures and validation
+![SQL Server](https://img.shields.io/badge/SQL%20Server-Database-red)
+Data warehouse, Dimensional modeling, Stored procedures and validation
 
-SSIS : 
-ETL orchestration,
-Data transformation and Surrogate key resolution
+![SSIS](https://img.shields.io/badge/SSIS-ETL-black)
+ETL orchestration, Data transformation and Surrogate key resolution
 
-SSRS :
+![SSRS](https://img.shields.io/badge/SSRS-Reporting-green)
 Analytical reporting and Interactive dashboards
 
 ---
