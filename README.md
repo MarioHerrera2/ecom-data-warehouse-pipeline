@@ -122,7 +122,7 @@ SSRS provides analytical reporting with filtering and drill-through capability.
 
 ---
 
-## Future Improvements
+## 🧱 Future Improvements
 
 **Potential enhancements include:**
 
