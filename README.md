@@ -16,6 +16,15 @@ This project implements a **star schema data warehouse** with staging, transform
 
 :hammer_and_pick: # Technology Stack
 
+![GitHub](https://img.shields.io/badge/GitHub-Version%20Control-white)
+![Python](https://img.shields.io/badge/Python-Data%20Generation-red)
+![SQL Server](https://img.shields.io/badge/SQL%20Server-Database-black)
+![T-SQL](https://img.shields.io/badge/T--SQL-Data%20Transformation-blue)
+![SSIS](https://img.shields.io/badge/SSIS-ETL-green)
+![SSRS](https://img.shields.io/badge/SSRS-Reporting-orange)
+![Visual Studio](https://img.shields.io/badge/Visual%20Studio-Development-purple)
+
+
 ![Python](https://img.shields.io/badge/Python-Data%20Generation-teal)
 Synthetic sales data generation
 
