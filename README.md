@@ -69,7 +69,7 @@ SSIS data flows perform transformations including:
 
 ---
 
-# Dimensional Data Warehouse
+### 🏭 Dimensional Data Warehouse
 
 The warehouse follows a **star schema design**.
 
