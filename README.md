@@ -91,7 +91,7 @@ Store location and region attributes
 
 ---
 
-# Reporting Layer
+# 📋 Reporting Layer
 
 SSRS provides analytical reporting with filtering and drill-through capability.
 
