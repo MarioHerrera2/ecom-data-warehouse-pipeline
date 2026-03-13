@@ -6,14 +6,6 @@ The project generates synthetic sales data, loads it through an ETL pipeline, bu
 
 ---
 
-# Architecture Overview
-
-This project implements a **star schema data warehouse** with staging, transformation, and reporting layers.
-
-![Warehouse Schema](EcomDW_Project/Images/Database_Schema.png)
-
----
-
 :hammer_and_pick: # Technology Stack
 
 ![GitHub](https://img.shields.io/badge/GitHub-Version%20Control-green)
@@ -21,7 +13,7 @@ This project implements a **star schema data warehouse** with staging, transform
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-Database-green)
 ![T-SQL](https://img.shields.io/badge/T--SQL-Data%20Transformation-green)
 ![SSIS](https://img.shields.io/badge/SSIS-ETL-green)
-![SSRS](https://img.shields.io/badge/SSRS-Reporting-orange)
+![SSRS](https://img.shields.io/badge/SSRS-Reporting-green)
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-Development-green)
 
 ---
@@ -32,6 +24,18 @@ This project implements a **star schema data warehouse** with staging, transform
 ![Data_Pipline](EcomDW_Project/Images/DataPipeline_.png)
 
 </div>
+---
+
+# Architecture Overview
+
+This project implements a **star schema data warehouse** with staging, transformation, and reporting layers.
+
+![Warehouse Schema](EcomDW_Project/Images/Database_Schema.png)
+
+
+
+
+
 ---
 
 # SSIS ETL Pipeline
