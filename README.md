@@ -105,7 +105,7 @@ SSRS provides analytical reporting with filtering and drill-through capability.
 
 ---
 
-# 📋 Data Validation
+# 🔎 Data Validation
 
 **Validation scripts ensure pipeline integrity by checking:**
 
