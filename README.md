@@ -24,25 +24,14 @@ This project implements a **star schema data warehouse** with staging, transform
 ![SSRS](https://img.shields.io/badge/SSRS-Reporting-orange)
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-Development-green)
 
-
-![Python](https://img.shields.io/badge/Python-Data%20Generation-teal)
-Synthetic sales data generation
-
-![SQL Server](https://img.shields.io/badge/SQL%20Server-Database-red)
-Data warehouse, Dimensional modeling, Stored procedures and validation
-
-![SSIS](https://img.shields.io/badge/SSIS-ETL-black)
-ETL orchestration, Data transformation and Surrogate key resolution
-
-![SSRS](https://img.shields.io/badge/SSRS-Reporting-green)
-Analytical reporting and Interactive dashboards
-
 ---
 
+<div align="center">
 
 
 ![Data_Pipline](EcomDW_Project/Images/DataPipeline_.png)
 
+</div>
 ---
 
 # SSIS ETL Pipeline
