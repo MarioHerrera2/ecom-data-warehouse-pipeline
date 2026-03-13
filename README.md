@@ -40,7 +40,7 @@ This project implements a **star schema data warehouse** with staging, transform
 
 ---
 
-# 🧭 SSIS ETL Pipeline
+## 🧭 SSIS ETL Pipeline
 
 The SSIS control flow orchestrates ingestion and warehouse loading.
 
@@ -49,7 +49,6 @@ The SSIS control flow orchestrates ingestion and warehouse loading.
 ---
 
 
-<div align="center">
 
 # ⚙️ Data Transformation
 
@@ -64,12 +63,10 @@ SSIS data flows perform transformations including:
 ![SSIS Data Flow](EcomDW_Project/Images/Data_Flow.png)
 
 
-</div>
-
 
 ---
 
-### 🏭 Dimensional Data Warehouse
+## 🏭 Dimensional Data Warehouse
 
 The warehouse follows a **star schema design**.
 
