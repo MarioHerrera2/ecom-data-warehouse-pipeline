@@ -6,7 +6,7 @@ The project generates synthetic sales data, loads it through an ETL pipeline, bu
 
 ---
 
-:hammer_and_pick: # Technology Stack
+:hammer_and_pick:  Technology Stack
 
 ![GitHub](https://img.shields.io/badge/GitHub-Version%20Control-white)
 ![Python](https://img.shields.io/badge/Python-Data%20Generation-green)
