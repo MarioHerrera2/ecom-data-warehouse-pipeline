@@ -8,13 +8,13 @@ The project generates synthetic sales data, loads it through an ETL pipeline, bu
 
 :hammer_and_pick: # Technology Stack
 
-![GitHub](https://img.shields.io/badge/GitHub-Version%20Control-green)
+![GitHub](https://img.shields.io/badge/GitHub-Version%20Control-white)
 ![Python](https://img.shields.io/badge/Python-Data%20Generation-green)
-![SQL Server](https://img.shields.io/badge/SQL%20Server-Database-green)
-![T-SQL](https://img.shields.io/badge/T--SQL-Data%20Transformation-green)
-![SSIS](https://img.shields.io/badge/SSIS-ETL-green)
-![SSRS](https://img.shields.io/badge/SSRS-Reporting-green)
-![Visual Studio](https://img.shields.io/badge/Visual%20Studio-Development-green)
+![SQL Server](https://img.shields.io/badge/SQL%20Server-Database-blue)
+![T-SQL](https://img.shields.io/badge/T--SQL-Data%20Transformation-orange)
+![SSIS](https://img.shields.io/badge/SSIS-ETL-red)
+![SSRS](https://img.shields.io/badge/SSRS-Reporting-teal)
+![Visual Studio](https://img.shields.io/badge/Visual%20Studio-Development-purple)
 
 ---
 
