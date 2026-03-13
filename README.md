@@ -14,10 +14,9 @@ This project implements a **star schema data warehouse** with staging, transform
 
 ---
 
-# Technology Stack
+:hammer_and_pick: # Technology Stack
 
-Python :
-Synthetic sales data generation
+![Python](https://img.shields.io/badge/Python-Data%20Generation-teal) : Synthetic sales data generation
 
 SQL Server : 
 Data warehouse,
