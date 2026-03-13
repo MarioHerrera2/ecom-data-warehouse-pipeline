@@ -28,7 +28,7 @@ The project generates synthetic sales data, loads it through an ETL pipeline, bu
 
 ---
 
-# Architecture Overview
+### 🏗️ Architecture Overview
 
 This project implements a **star schema data warehouse** with staging, transformation, and reporting layers.
 
