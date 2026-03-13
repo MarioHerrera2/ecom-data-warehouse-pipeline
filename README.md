@@ -16,6 +16,7 @@ The project generates synthetic sales data, loads it through an ETL pipeline, bu
 ![SSRS](https://img.shields.io/badge/SSRS-Reporting-teal)
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-Development-purple)
 
+
 ---
 
 <div align="center">
